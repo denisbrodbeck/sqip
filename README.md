@@ -1,6 +1,6 @@
 # sqip does SVG-based LQIP image creation
 
-![Image of a blurred gopher](logo.png)
+<p align="center">![Image of a blurred gopher](logo.png)</p>
 
 [![GoDoc](https://godoc.org/github.com/denisbrodbeck/sqip?status.svg)](https://godoc.org/github.com/denisbrodbeck/sqip) [![Go Report Card](https://goreportcard.com/badge/github.com/denisbrodbeck/sqip)](https://goreportcard.com/report/github.com/denisbrodbeck/sqip)
 
