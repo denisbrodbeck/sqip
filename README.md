@@ -8,7 +8,7 @@
 
 ## Overview
 
-SQIP is a go implementation of [Tobias Baldauf's](https://tobias.is/) SVG-based LQIP [technique](https://github.com/technopagan/sqip).
+SQIP is a go implementation of [Tobias Baldauf‘s](https://tobias.is/) SVG-based LQIP [technique](https://github.com/technopagan/sqip).
 
 [LQIP](http://www.guypo.com/introducing-lqip-low-quality-image-placeholders/) *(Low Quality Image Placeholders)* boils down to this:
 
@@ -20,6 +20,8 @@ So instead of waiting for the final image to be rendered, we can serve a highly 
 SQIP is an evolution of the classic LQIP technique: it makes use of [Primitive](https://github.com/fogleman/primitive) to generate a SVG consisting of several simple shapes that approximate the main features visible inside the image, optimizes the SVG using [minify](github.com/tdewolff/minify) and adds a Gaussian Blur filter to it.
 
 This produces a SVG placeholder which weighs in at only *~800-1000* bytes, *looks smooth* on all screens and provides an *visual cue* of image contents to come.
+
+[Tobias Baldauf‘s](https://github.com/technopagan/sqip) project is written in js and depends on an installed version of *node*, *go*, *primitive* and multiple npm modules. This project aims no minimize the dependencies down to exactly one — this go package.
 
 ## Installation
 
