@@ -39,15 +39,6 @@ import "github.com/denisbrodbeck/sqip"
 
 ## CLI usage
 
-> sqip [-n <int>] [-o <path>] [options...] <file>
-> Flags:
->   -n  <int>     number of primitive SVG shapes (default: 8)
->   -o  <path>    save the placeholder SVG to a file (default: empty)
-> Options:
->   -mode  <int>  shape type (default: 0)
->   -alpha <int>  color alpha (use 0 to let the algorithm choose alpha for each shape) (default: 128)
->   -bg    <hex>  background color as hex (default: avg)
-
 ```bash
 # Generate a SVG placeholder and print an example <img> tag to stdout
 sqip input.png
@@ -57,6 +48,19 @@ sqip -o output.svg input.png
 
 # Customize the number of primitive SVG shapes (default=8) to influence bytesize or level of detail
 sqip -n 4 input.jpg
+```
+
+All available flags:
+
+```
+sqip [-n <int>] [-o <path>] [options...] <file>
+Flags:
+  -n  <int>     number of primitive SVG shapes (default: 8)
+  -o  <path>    save the placeholder SVG to a file (default: empty)
+Options:
+  -mode  <int>  shape type (default: 0)
+  -alpha <int>  color alpha (use 0 to let the algorithm choose alpha for each shape) (default: 128)
+  -bg    <hex>  background color as hex (default: avg)
 ```
 
 ## API
