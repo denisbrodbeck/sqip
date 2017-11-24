@@ -63,7 +63,7 @@ Options:
   -bg    <hex>  background color as hex (default: avg)
 ```
 
-## API
+## API usage
 
 Here is an example app:
 
