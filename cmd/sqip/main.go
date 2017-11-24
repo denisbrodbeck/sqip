@@ -1,4 +1,21 @@
-package main
+// Package main provides the command line app for SVG-based LQIP image creation.
+//
+// Usage: sqip [-n <int>] [-o <path>] [options...] <file>
+// Flags:
+//   -n  <int>     number of primitive SVG shapes (default: 8)
+//   -o  <path>    save the placeholder SVG to a file (default: empty)
+// Options:
+//   -mode  <int>  shape type (default: 0)
+//   -alpha <int>  color alpha (use 0 to let the algorithm choose alpha for each shape) (default: 128)
+//   -bg    <hex>  background color as hex (default: avg)
+//
+// If no output path is provided, an example <img> tag will be printed to stdout.
+// Available shape types: 0=combo 1=triangle 2=rect 3=ellipse 4=circle 5=rotatedrect 6=beziers 7=rotatedellipse 8=polygon
+//
+// Try:
+// sqip -n 12 path/to/image.jpg
+// sqip -mode 8 -o ./image.svg path/to/image.jpg
+package main // import "github.com/denisbrodbeck/sqip/cmd/sqip"
 
 import (
 	"flag"
