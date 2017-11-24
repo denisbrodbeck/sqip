@@ -1,0 +1,28 @@
+project_name: sqip
+builds:
+  - main: ./cmd/sqip/main.go
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - 386
+      - amd64
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - docs
+      - Merge pull request
+      - Merge branch
+      - typo
+archive:
+  replacements:
+    darwin: macOS
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+  format_overrides:
+    - goos: windows
+      format: zip
