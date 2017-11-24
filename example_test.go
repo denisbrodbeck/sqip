@@ -18,6 +18,7 @@ func Example() {
 	workers := runtime.NumCPU() // number of parallel workers
 	background := ""            // background color (hex)
 
+	// create a primitive svg
 	svg, width, height, err := sqip.Run(in, workSize, count, mode, alpha, repeat, workers, background)
 	if err != nil {
 		log.Fatal(err)
