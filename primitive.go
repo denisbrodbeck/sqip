@@ -2,7 +2,6 @@ package sqip
 
 import (
 	"image"
-	"log"
 
 	"github.com/fogleman/primitive/primitive"
 	"github.com/nfnt/resize"
@@ -15,7 +14,6 @@ func Primitive(input image.Image, workSize, outputSize, count, mode, alpha, repe
 	}
 
 	// determine background color
-	log.Println(background)
 	var bg primitive.Color
 	if background == "" {
 		bg = primitive.MakeColor(primitive.AverageImageColor(input))
