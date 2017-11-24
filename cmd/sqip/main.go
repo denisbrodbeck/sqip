@@ -3,8 +3,10 @@
 // Usage: sqip [-n <int>] [-o <path>] [options...] <file>
 //
 // Flags:
-//   -n  <int>     number of primitive SVG shapes (default: 8)
-//   -o  <path>    save the placeholder SVG to a file (default: empty)
+//   -n        <int>     number of primitive SVG shapes (default: 8)
+//   -o        <path>    save the placeholder SVG to a file (default: empty)
+//   -help     <bool>    show this help and exit
+//   -version  <bool>    show app version and exit
 // Options:
 //   -mode  <int>  shape type (default: 0)
 //   -alpha <int>  color alpha (use 0 to let the algorithm choose alpha for each shape) (default: 128)
@@ -39,6 +41,7 @@ var (
 
 func usage() {
 	log.Println(usageStr)
+	log.Println("Version:", version)
 	os.Exit(errorParseExitCode)
 }
 
@@ -49,10 +52,13 @@ func failOnErr(err error) {
 	}
 }
 
+var version = "master" // set by ldflags
+
 func main() {
 	var outFile string
 	var count int
 	var help bool
+	var showVersion bool
 	var mode int
 	var alpha int
 	var background string
@@ -61,6 +67,7 @@ func main() {
 	flag.IntVar(&count, "n", 8, "")
 	flag.BoolVar(&help, "h", false, "")
 	flag.BoolVar(&help, "help", false, "")
+	flag.BoolVar(&showVersion, "version", false, "")
 	flag.IntVar(&mode, "mode", 0, "")
 	flag.IntVar(&alpha, "alpha", 128, "")
 	flag.StringVar(&background, "bg", "", "")
@@ -71,6 +78,10 @@ func main() {
 
 	if help {
 		usage()
+	}
+	if showVersion {
+		log.Println(version)
+		os.Exit(successExitCode)
 	}
 
 	if flag.NArg() != 1 {
@@ -101,8 +112,10 @@ const usageStr = `sqip is a tool for SVG-based LQIP image creation
 
 Usage: sqip [-n <int>] [-o <path>] [options...] <file>
 Flags:
-  -n  <int>     number of primitive SVG shapes (default: 8)
-  -o  <path>    save the placeholder SVG to a file (default: empty)
+  -n        <int>     number of primitive SVG shapes (default: 8)
+  -o        <path>    save the placeholder SVG to a file (default: empty)
+  -help     <bool>    show this help and exit
+  -version  <bool>    show app version and exit
 Options:
   -mode  <int>  shape type (default: 0)
   -alpha <int>  color alpha (use 0 to let the algorithm choose alpha for each shape) (default: 128)
