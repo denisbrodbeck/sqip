@@ -1,10 +1,18 @@
-# SQIP does SVG-based LQIP image creation
+<h1 align="center">
+  <br>
+    <img src="https://github.com/denisbrodbeck/sqip/blob/master/logo.png?raw=true" alt="Image of a blurred gopher" width="360" height="490">
+  <br>
+  SQIP does SVG-based LQIP image creation
+  <br>
+  <br>
+</h1>
 
-<p align="center"><img src="logo.png" alt="Image of a blurred gopher" style="max-width:100%;"></p>
+<h4 align="center">… because even blurred preview images need to look good :godmode:</h4>
 
-[![GoDoc](https://godoc.org/github.com/denisbrodbeck/sqip?status.svg)](https://godoc.org/github.com/denisbrodbeck/sqip) [![Go Report Card](https://goreportcard.com/badge/github.com/denisbrodbeck/sqip)](https://goreportcard.com/report/github.com/denisbrodbeck/sqip)
-
-… because even blurred preview images need to look good :godmode:
+<p align="center">
+  <a href="https://godoc.org/github.com/denisbrodbeck/sqip"><img src="https://godoc.org/github.com/denisbrodbeck/sqip?status.svg" alt="GoDoc"></a>
+  <a href="https://goreportcard.com/report/github.com/denisbrodbeck/sqip"><img src="https://goreportcard.com/badge/github.com/denisbrodbeck/sqip" alt="Go Report Card"></a>
+</p>
 
 ## Overview
 
@@ -21,7 +29,7 @@ SQIP is an evolution of the classic LQIP technique: it makes use of [Primitive](
 
 This produces a SVG placeholder which weighs in at only *~800-1000* bytes, *looks smooth* on all screens and provides an *visual cue* of image contents to come.
 
-[Tobias Baldauf‘s](https://github.com/technopagan/sqip) project is written in js and depends on an installed version of *node*, *go*, *primitive* and multiple npm modules. This project aims no minimize the dependencies down to exactly one — this go package.
+[Tobias Baldauf‘s](https://github.com/technopagan/sqip) project is written in js and depends on an installed version of *node*, *go*, *primitive* and multiple npm modules. This project aims to minimize the dependencies down to exactly one — this go package.
 
 ## Installation
 
