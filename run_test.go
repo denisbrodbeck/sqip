@@ -3,7 +3,7 @@ package sqip
 import "testing"
 
 func TestRun(t *testing.T) {
-	svg, w, h, err := Run(testImage, 64, 4, 0, 128, 0, 1)
+	svg, w, h, err := Run(testImage, 64, 4, 0, 128, 0, 1, "")
 	if err != nil {
 		t.Error(err)
 	}

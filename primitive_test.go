@@ -11,7 +11,7 @@ func TestPrimitive(t *testing.T) {
 	}
 	w, h := ImageWidthAndHeight(img)
 	outputSize := largerOne(w, h)
-	svg, err := Primitive(img, 64, outputSize, 8, 0, 128, 0, 1)
+	svg, err := Primitive(img, 64, outputSize, 8, 0, 128, 0, 1, "")
 	if err != nil {
 		t.Error(err)
 	}
