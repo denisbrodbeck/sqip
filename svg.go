@@ -16,7 +16,7 @@ var captureGroup = regexp.MustCompile(`^(.*?)(<g)(.*?)$`)
 var captureSVGOpen = regexp.MustCompile(`(<svg)(.*?)(>)`)
 
 //Capture the (pre-minified) background rectangle
-var captureBackground = regexp.MustCompile(`<rect.*fill="(.*)".*/>`)
+var captureBackground = regexp.MustCompile(`<rect.*?fill="([#a-f0-9]*)".*?/>`)
 
 // Blur adds viewbox and preserveAspectRatio attributes as well as
 // a Gaussian Blur filter to the SVG.
