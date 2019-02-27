@@ -27,6 +27,10 @@ func RunLoaded(image image.Image, workSize, count, mode, alpha, repeat, workers 
 		return "", 0, 0, err
 	}
 
+	// resize BG to match original
+	// Ensures agreement between viewBox and actual content
+	svg = Refit(svg, w, h)
+
 	// minify svg
 	svg, err = Minify(svg)
 	if err != nil {
